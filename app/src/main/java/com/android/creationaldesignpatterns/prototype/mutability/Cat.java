@@ -38,6 +38,7 @@ public class Cat implements Cloneable {
         return owner;
     }
 
+
     public void setOwner(Owner owner) {
         this.owner = owner;
     }
@@ -48,6 +49,10 @@ public class Cat implements Cloneable {
     public Cat clone(){
         try{
             Cat cat = (Cat) super.clone();
+
+            // Create a new object for the field owner and assign it to shallow copy obtained to make it a deep copy
+            this.owner = owner.clone();
+
             return cat;
         }catch(CloneNotSupportedException e){
             throw new AssertionError();

@@ -6,8 +6,9 @@ import static org.junit.Assert.*;
 
 public class AnimalTest {
 
+
     @Test
-    public void createCatCopy() {
+    public void testCreateCatCopy() {
         Animal.createCatCopy();
     }
 }

@@ -1,10 +1,12 @@
 package com.android.creationaldesignpatterns.prototype.mutability;
 
-public class Owner {
+import org.jetbrains.annotations.NotNull;
+
+public class Owner implements Cloneable {
 
     private String name;
 
-    public Owner(String name){
+    public Owner(String name) {
         this.name = name;
     }
 
@@ -17,14 +19,18 @@ public class Owner {
     }
 
 
-    /*@NotNull
+    /*
+     * Fix the problem of changing the value of this class`s attributes
+     * when it`s declared as an attribute in another class and used by its shallow
+     * */
+    @NotNull
     @Override
-    public Owner clone(){
-        try{
+    public Owner clone() {
+        try {
             return (Owner) super.clone();
-        }catch(CloneNotSupportedException e){
+        } catch (CloneNotSupportedException e) {
             throw new AssertionError();
         }
-    }*/
+    }
 
 }

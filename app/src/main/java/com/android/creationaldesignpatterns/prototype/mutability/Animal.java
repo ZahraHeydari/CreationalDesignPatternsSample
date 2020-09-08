@@ -7,12 +7,13 @@ public class Animal {
         Cat cat = new Cat();
         cat.setOwner(new Owner("Harry"));
         Cat catCopy = cat.clone();
-        System.out.println("Name of first cat: "+ cat.getOwner().getName());
-        System.out.println("Name of second cat: "+ cat.getOwner().getName());
+        System.out.println("Name of the first cat: "+ cat.getOwner().getName());
+        System.out.println("Name of the second cat: "+ catCopy.getOwner().getName());
+
 
         catCopy.getOwner().setName("Lily");
         System.out.println(cat.getOwner().getName());
-        System.out.println(cat.getOwner().getName());
+        System.out.println(catCopy.getOwner().getName());
     }
 
 }
